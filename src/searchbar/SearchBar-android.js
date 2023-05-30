@@ -73,7 +73,10 @@ class SearchBar extends Component {
       hasFocus: false,
       isEmpty: value ? value === '' : true,
     };
-    Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+    this.keyboardListener = Keyboard.addListener(
+      'keyboardDidHide',
+      this._keyboardDidHide
+    );
   }
 
   _keyboardDidHide = () => {
@@ -81,7 +84,7 @@ class SearchBar extends Component {
   };
 
   componentWillUnmount() {
-    Keyboard.removeListener('keyboardDidHide', this._keyboardDidHide);
+    this.keyboardListener.remove();
   }
 
   render() {

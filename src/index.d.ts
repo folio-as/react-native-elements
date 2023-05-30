@@ -482,7 +482,7 @@ export class Card extends React.Component<CardProps> {
  * Set the buttons within a Group.
  */
 export interface ElementObject {
-  element: React.ReactElement<{}> | React.ReactType;
+  element: React.ReactElement<{}>;
 }
 
 /**
